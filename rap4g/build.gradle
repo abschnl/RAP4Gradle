@@ -1,0 +1,53 @@
+import java.lang.invoke.LambdaForm.Compiled;
+
+// 所有子项目的通用配置
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    version = '1.0'
+    // JVM 版本号要求
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    ext {
+        springVersion = '3.2.11.RELEASE'
+        hibernateVersion='4.3.1.Final'
+    }
+    repositories {
+        mavenLocal()
+        maven{ url 'http://maven.oschina.net/content/groups/public/'}
+        mavenCentral()
+    }
+    jar {
+        manifest { attributes("Implementation-Title": "Gradle") }
+    }
+    configurations {
+        // 所有需要忽略的包定义在此
+        all*.exclude group: 'commons-httpclient'
+        all*.exclude group: 'commons-logging'
+        all*.exclude group: 'commons-beanutils', module: 'commons-beanutils'
+    }
+    dependencies {
+        // 通用依赖
+        compile("org.mybatis:mybatis:3.2.4")
+        compile("org.mybatis:mybatis-spring:1.2.2")
+        compile('mysql:mysql-connector-java:5.1.34')
+        compile('commons-dbcp:commons-dbcp:1.4')
+        compile('org.apache.httpcomponents:httpasyncclient:4.1')
+        compile('com.alibaba.rocketmq:rocketmq-client:3.4.6')
+        compile('commons-lang:commons-lang:2.6')
+        compile("org.springframework:spring-tx:4.1.5.RELEASE")
+        compile("org.springframework:spring-jdbc:4.1.5.RELEASE")
+        // 测试依赖
+        testCompile(
+                "org.springframework:spring-test:$springVersion",
+                "junit:junit:4.11"
+                )
+    }
+    // 显示当前项目下所有用于 compile 的 jar.
+    task listJars(description: 'Display all compile jars.') << {
+        configurations.compile.each { File file -> println file.name }
+    }
+}
