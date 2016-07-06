@@ -8,22 +8,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@ImportResource(
-{ "spring/spring.xml" })
+@ImportResource({ "spring/spring.xml" })
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer
-{
-	
+public class Application extends SpringBootServletInitializer {
+
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
-	{
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
-	
-	public static void main(String[] args)
-		throws Exception
-	{
+
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Application.class, args);
 	}
-	
+
 }

@@ -36,9 +36,6 @@ dependencies {
     apiCompile 'commons-codec:commons-codec:1.5'
     compile 'javax.validation:validation-api:1.0.0.GA'
     compile 'org.hibernate:hibernate-validator:5.2.4.Final'
-    compile 'cn.com.duiba.tuia:tuia-client:0.1.10-SNAPSHOT'
-    compile 'cn.com.duiba.goods-center:goods-center-api:1.2.1-SNAPSHOT'
-    compile("cn.com.duiba:duiba-service-api:1.1.3.liyang-SNAPSHOT")
     implCompile sourceSets.api.output
     implCompile 'commons-lang:commons-lang:2.6'
     

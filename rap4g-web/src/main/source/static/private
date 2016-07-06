@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>推啊管理平台</title>
+  <link rel="stylesheet" href="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/wysihtml5/dist/wysihtml5-0.3.0.min.js"></script>
+    <script type="text/javascript" src="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/wysihtml5/parser_rules/advanced.js"></script>
+    <script type="text/javascript" src="http://yun.duiba.com.cn/tuia/tuia-advertiser/bower_components/jquery-qrcode/jquery.qrcode.min.js"></script>
+	<script type="text/javascript" src="http://yun.dui88.com/tuia/tuia-admin/dist/vendors06.js"></script>
+    <script type="text/javascript" src="http://yun.dui88.com/tuia/tuia-admin/dist/private06.js"></script>
+</body>
+</html>
