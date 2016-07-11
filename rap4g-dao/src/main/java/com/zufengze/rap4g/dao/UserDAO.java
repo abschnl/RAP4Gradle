@@ -1,8 +1,8 @@
 package com.zufengze.rap4g.dao;
 
-import com.zufengze.rap4g.dataobject.ActionAndPageDO;
+import com.zufengze.rap4g.dataobject.UserDO;
 
-public interface ActionAndPageDAO {
+public interface UserDAO {
 
 	/**
 	 * 新增请求与页面绑定数据
@@ -10,7 +10,7 @@ public interface ActionAndPageDAO {
 	 * @param obj
 	 * @return 影响记录数
 	 */
-	void insertActionAndPage(ActionAndPageDO obj);
+	void insertUser(UserDO obj);
 
 	/**
 	 * 根据绑定关系ID删除请求与页面绑定数据
@@ -18,7 +18,7 @@ public interface ActionAndPageDAO {
 	 * @param id
 	 * @return 影响记录数
 	 */
-	int deleteActionAndPageById(Long id);
+	int deleteUserById(Long id);
 
 	/**
 	 * 根据绑定关系ID修改请求与页面绑定数据
@@ -26,13 +26,21 @@ public interface ActionAndPageDAO {
 	 * @param id
 	 * @return 影响记录数
 	 */
-	int updateActionAndPageById(Long id);
+	int updateUserById(Long id);
 
 	/**
 	 * 根据绑定关系ID查询指定请求与页面绑定数据
 	 * 
 	 * @param id
-	 * @return ActionAndPageDO
+	 * @return UserDO
 	 */
-	ActionAndPageDO selectActionAndPageById(Long id);
+	UserDO selectUserById(Long id);
+	
+	/**
+	 * 根据账号查询用户信息
+	 * 
+	 * @param account
+	 * @return UserDO
+	 */
+	UserDO selectUserByAccount(String account);
 }

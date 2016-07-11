@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 目的：为DAO接口方法提供sql语句配置 -->
+<mapper namespace="com.zufengze.rap4g.dao.UserDAO">
+	<select id="selectUserByAccount" 
+	resultType="com.zufengze.rap4g.dataobject.UserDO"
+	parameterType="java.lang.String">
+		select 
+		id,
+		account,
+		password,
+		name,
+		email,
+		create_date,
+		is_locked_out,
+		is_hint_enabled,
+		last_login_date,
+		incorrect_login_attempt,
+		realname
+		from tb_user
+		where account=#{account}
+	</select>
+</mapper>
