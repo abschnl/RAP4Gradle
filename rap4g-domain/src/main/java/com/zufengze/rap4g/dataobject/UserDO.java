@@ -10,17 +10,24 @@ public class UserDO implements java.io.Serializable {
     private static final long serialVersionUID = -7239752838952702038L;
 
     /** 账户锁定. */
-    final static boolean      LOCK_SIGN_LOCKED = true;
+    public static final boolean      LOCK_SIGN_LOCKED = true;
 
     /** 账户未锁定. */
-    final static boolean      LOCK_SIGN_UNLOCK = false;
+    public static final boolean      LOCK_SIGN_UNLOCK = false;
 
     /** 开启新手引导. */
-    final static boolean      HINT_SIGN_ENABLE = true;
+    public static final boolean      HINT_SIGN_ENABLE = true;
 
     /** 关闭新手引导. */
-    final static boolean      HINT_SIGN_UNABLE = false;
-
+    public static final boolean      HINT_SIGN_UNABLE = false;
+    
+    /** 错误登录次数，登录成功后会重置为0. */
+    public static final int          LOGIN_ERROR_NUM_INIT = 0;
+    
+    /** mock接口调用次数 初始化为0. */
+    public static final int          MOCK_NUM_INIT = 0;
+    
+    
     /** 主键ID. */
     private Long              id;
 
@@ -45,7 +52,7 @@ public class UserDO implements java.io.Serializable {
     /** 是否开启新手引导. */
     private boolean           isHintEnabled;
 
-    /** 最近登录时间. */
+    /** 最后登录时间. */
     private Date              lastLoginDate;
 
     /** 错误登录次数，登录成功后会重置为0. */

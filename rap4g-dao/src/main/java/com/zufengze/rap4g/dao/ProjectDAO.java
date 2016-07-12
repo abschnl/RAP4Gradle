@@ -1,6 +1,9 @@
 package com.zufengze.rap4g.dao;
 
+import java.util.List;
+
 import com.zufengze.rap4g.dataobject.ProjectDO;
+import com.zufengze.rap4g.req.OrganizationReq;
 
 public interface ProjectDAO {
 
@@ -35,4 +38,21 @@ public interface ProjectDAO {
 	 * @return ProjectDO
 	 */
 	ProjectDO selectProjectById(Long id);
+	
+   /**
+     * 分页查询用户参与的项目数量
+     * 
+     * @param req
+     * @return int
+     */
+    int selectProjectsByUidCount(OrganizationReq req);
+	
+	
+   /**
+     * 分页查询用户参与的项目
+     * 
+     * @param req
+     * @return List<ProjectDO>
+     */
+	List<ProjectDO> selectProjectsByUid(OrganizationReq req);
 }

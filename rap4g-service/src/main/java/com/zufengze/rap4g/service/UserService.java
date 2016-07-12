@@ -3,6 +3,9 @@
  */
 package com.zufengze.rap4g.service;
 
+import com.zufengze.rap4g.exception.Rap4gException;
+import com.zufengze.rap4g.req.RegisterReq;
+
 /**
  * 用户相关
  * 
@@ -19,5 +22,15 @@ public interface UserService
 	 * @param passwd 密码
 	 * @throws Exception 失败抛出异常
 	 */
-	public Long login(String account, String passwd) throws Exception;
+	public Long login(String account, String passwd) throws Rap4gException;
+	
+	
+   /**
+     * 用户注册.
+     *
+     * @param account 账户
+     * @param passwd 密码
+     * @throws Exception 失败抛出异常
+     */
+    public void register(RegisterReq req) throws Rap4gException;
 }

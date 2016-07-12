@@ -10,6 +10,7 @@ package com.zufengze.rap4g.constants;
  * AA：模块编号
  * <li>01：模块共用</li>
  * <li>02：用户模块</li>
+ * <li>03：项目模块</li>
  * </ul>
  * <ul>
  * B：内外部错误码标志
@@ -52,6 +53,7 @@ public enum ErrorCode {
 
     /** 账号/密码错误. */
     E0200002("0200002", "账号/密码错误"),
+
     ;
 
     /** 错误码. */
