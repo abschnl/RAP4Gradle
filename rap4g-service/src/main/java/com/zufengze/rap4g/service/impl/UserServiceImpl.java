@@ -34,16 +34,6 @@ public class UserServiceImpl implements UserService {
         userDO.setAccount(req.getAccount());
         // 邮箱
         userDO.setEmail(req.getEmail());
-        // 是否开启新手引导
-        userDO.setHintEnabled(UserDO.HINT_SIGN_ENABLE);
-        // 错误登录次数，登录成功后会重置为0
-        userDO.setIncorrectLoginAttempt(UserDO.LOGIN_ERROR_NUM_INIT);
-        // 用户是否锁定 false-未锁定 true-被锁定
-        userDO.setLockedOut(UserDO.LOCK_SIGN_UNLOCK);
-        // mock接口调用次数 初始化为0
-        userDO.setMockNum(UserDO.MOCK_NUM_INIT);
-        // 名字/昵称
-        userDO.setName(req.getRealname());
         // 密码
         userDO.setPassword(MD5Utils.getDoubleMD5(req.getPassword()));
         // 真实名字

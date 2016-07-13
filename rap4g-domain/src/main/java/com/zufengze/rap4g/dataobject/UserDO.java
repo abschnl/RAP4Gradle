@@ -9,25 +9,6 @@ public class UserDO implements java.io.Serializable {
 
     private static final long serialVersionUID = -7239752838952702038L;
 
-    /** 账户锁定. */
-    public static final boolean      LOCK_SIGN_LOCKED = true;
-
-    /** 账户未锁定. */
-    public static final boolean      LOCK_SIGN_UNLOCK = false;
-
-    /** 开启新手引导. */
-    public static final boolean      HINT_SIGN_ENABLE = true;
-
-    /** 关闭新手引导. */
-    public static final boolean      HINT_SIGN_UNABLE = false;
-    
-    /** 错误登录次数，登录成功后会重置为0. */
-    public static final int          LOGIN_ERROR_NUM_INIT = 0;
-    
-    /** mock接口调用次数 初始化为0. */
-    public static final int          MOCK_NUM_INIT = 0;
-    
-    
     /** 主键ID. */
     private Long              id;
 
@@ -37,151 +18,138 @@ public class UserDO implements java.io.Serializable {
     /** 密码. */
     private String            password;
 
-    /** 名字/昵称. */
-    private String            name;
-
     /** 邮箱. */
     private String            email;
 
     /** 创建时间. */
     private Date              createDate;
 
-    /** 用户是否锁定 false-未锁定 true-被锁定. */
-    private boolean           isLockedOut;
-
-    /** 是否开启新手引导. */
-    private boolean           isHintEnabled;
-
-    /** 最后登录时间. */
-    private Date              lastLoginDate;
-
-    /** 错误登录次数，登录成功后会重置为0. */
-    private int               incorrectLoginAttempt;
-
     /** 真实名字. */
     private String            realname;
 
-    /** 工号. */
-    private String            empId;
-
-    /** mock次数，用于记录该用户所创建的接口被调用的mock次数. */
-    private int               mockNum;
-
-    /** 角色ID. */
-    private Long              roleId;
-
+    /**
+     * id.
+     *
+     * @return the id
+     * @since JDK 1.6
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * id.
+     *
+     * @param id the id to set
+     * @since JDK 1.6
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * account.
+     *
+     * @return the account
+     * @since JDK 1.6
+     */
     public String getAccount() {
         return account;
     }
 
+    /**
+     * account.
+     *
+     * @param account the account to set
+     * @since JDK 1.6
+     */
     public void setAccount(String account) {
         this.account = account;
     }
 
+    /**
+     * password.
+     *
+     * @return the password
+     * @since JDK 1.6
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * password.
+     *
+     * @param password the password to set
+     * @since JDK 1.6
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    /**
+     * email.
+     *
+     * @return the email
+     * @since JDK 1.6
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * email.
+     *
+     * @param email the email to set
+     * @since JDK 1.6
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * createDate.
+     *
+     * @return the createDate
+     * @since JDK 1.6
+     */
     public Date getCreateDate() {
         return createDate;
     }
 
+    /**
+     * createDate.
+     *
+     * @param createDate the createDate to set
+     * @since JDK 1.6
+     */
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
-    public boolean isLockedOut() {
-        return isLockedOut;
-    }
-
-    public void setLockedOut(boolean isLockedOut) {
-        this.isLockedOut = isLockedOut;
-    }
-
-    public boolean isHintEnabled() {
-        return isHintEnabled;
-    }
-
-    public void setHintEnabled(boolean isHintEnabled) {
-        this.isHintEnabled = isHintEnabled;
-    }
-
-    public Date getLastLoginDate() {
-        return lastLoginDate;
-    }
-
-    public void setLastLoginDate(Date lastLoginDate) {
-        this.lastLoginDate = lastLoginDate;
-    }
-
-    public int getIncorrectLoginAttempt() {
-        return incorrectLoginAttempt;
-    }
-
-    public void setIncorrectLoginAttempt(int incorrectLoginAttempt) {
-        this.incorrectLoginAttempt = incorrectLoginAttempt;
-    }
-
+    /**
+     * realname.
+     *
+     * @return the realname
+     * @since JDK 1.6
+     */
     public String getRealname() {
         return realname;
     }
 
+    /**
+     * realname.
+     *
+     * @param realname the realname to set
+     * @since JDK 1.6
+     */
     public void setRealname(String realname) {
         this.realname = realname;
     }
 
-    public String getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(String empId) {
-        this.empId = empId;
-    }
-
-    public int getMockNum() {
-        return mockNum;
-    }
-
-    public void setMockNum(int mockNum) {
-        this.mockNum = mockNum;
-    }
-
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
+    /**
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -191,29 +159,14 @@ public class UserDO implements java.io.Serializable {
         builder.append(account);
         builder.append(", password=");
         builder.append(password);
-        builder.append(", name=");
-        builder.append(name);
         builder.append(", email=");
         builder.append(email);
         builder.append(", createDate=");
         builder.append(createDate);
-        builder.append(", isLockedOut=");
-        builder.append(isLockedOut);
-        builder.append(", isHintEnabled=");
-        builder.append(isHintEnabled);
-        builder.append(", lastLoginDate=");
-        builder.append(lastLoginDate);
-        builder.append(", incorrectLoginAttempt=");
-        builder.append(incorrectLoginAttempt);
         builder.append(", realname=");
         builder.append(realname);
-        builder.append(", empId=");
-        builder.append(empId);
-        builder.append(", mockNum=");
-        builder.append(mockNum);
-        builder.append(", roleId=");
-        builder.append(roleId);
         builder.append("]");
         return builder.toString();
     }
+
 }

@@ -5,7 +5,7 @@ import com.zufengze.rap4g.dataobject.UserDO;
 public interface UserDAO {
 
 	/**
-	 * 新增请求与页面绑定数据
+	 * 新增数据
 	 * 
 	 * @param obj
 	 * @return 影响记录数
@@ -13,7 +13,7 @@ public interface UserDAO {
 	void insertUser(UserDO obj);
 
 	/**
-	 * 根据绑定关系ID删除请求与页面绑定数据
+	 * 根据ID删除数据
 	 * 
 	 * @param id
 	 * @return 影响记录数
@@ -21,7 +21,7 @@ public interface UserDAO {
 	int deleteUserById(Long id);
 
 	/**
-	 * 根据绑定关系ID修改请求与页面绑定数据
+	 * 根据ID修改数据
 	 * 
 	 * @param id
 	 * @return 影响记录数
@@ -29,7 +29,7 @@ public interface UserDAO {
 	int updateUserById(Long id);
 
 	/**
-	 * 根据绑定关系ID查询指定请求与页面绑定数据
+	 * 根据ID查询指定数据
 	 * 
 	 * @param id
 	 * @return UserDO
